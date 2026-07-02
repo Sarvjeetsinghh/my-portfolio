@@ -13,8 +13,9 @@ const NAV = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
+  { id: "techstack", label: "Tech Stack" },
+  { id: "leetcode", label: "LeetCode" },
+  { id: "contact", label: "Contact me" },
 ];
 
 const EXPERIENCE = [
@@ -40,51 +41,138 @@ const EXPERIENCE = [
   },
 ];
 
+/* Each project now carries the extra fields the new spotlight
+   layout needs: an overview paragraph, explicit tech groups,
+   and links. Fill in the REPLACE ME spots with real info/urls. */
 const PROJECTS = [
   {
     name: "DreamNaukri",
     tagline: "Job Portal",
     date: "Nov 2025",
     image: dreamnaukriImg,
-    stack: ["Java", "Maven", "JavaScript", "Cashfree", "Hostinger"],
+    overview:
+      "A job-search platform where candidates browse and apply to listings and recruiters manage postings, built end-to-end on a Java/Maven backend with a JavaScript frontend and Cashfree for payments, deployed live on Hostinger.",
+    techGroups: [
+      { label: "Backend", items: "Java, Maven" },
+      { label: "Frontend", items: "JavaScript, HTML5, CSS3" },
+      { label: "Payments", items: "Cashfree" },
+      { label: "Deployment", items: "Hostinger" },
+    ],
+    githubUrl: "#", // REPLACE ME — add repo link
+    liveUrl: "#", // REPLACE ME — add live link
   },
   {
     name: "Toywallah",
     tagline: "E-Commerce Platform",
     date: "Dec 2025",
     image: toywallahImg,
-    stack: ["Java", "JSP", "MySQL", "Servlet", "Cashfree", "Hostinger"],
+    overview:
+      "A full e-commerce storefront for toys — product catalog, cart and checkout — built with JSP on the frontend, Servlets and MySQL on the backend, with Cashfree payment integration and a live Hostinger deployment.",
+    techGroups: [
+      { label: "Backend", items: "Java, Servlet, Maven" },
+      { label: "Frontend", items: "JSP" },
+      { label: "Database", items: "MySQL" },
+      { label: "Payments", items: "Cashfree" },
+      { label: "Deployment", items: "Hostinger" },
+    ],
+    githubUrl: "#", // REPLACE ME — add repo link
+    liveUrl: "#", // REPLACE ME — add live link
   },
   {
     name: "Netclix",
     tagline: "REPLACE ME — e.g. Streaming Platform", // [Guessing]
     date: "REPLACE ME", // [Guessing]
     image: netclixImg,
-    stack: ["REPLACE ME"], // [Guessing]
+    overview: "REPLACE ME — add a 2–3 sentence overview of what Netclix does and how it's built.",
+    techGroups: [{ label: "Stack", items: "REPLACE ME" }],
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     name: "Bull Clothings",
     tagline: "REPLACE ME — e.g. E-Commerce / Fashion Store", // [Guessing]
     date: "REPLACE ME", // [Guessing]
     image: bullclothingsImg,
-    stack: ["REPLACE ME"], // [Guessing]
+    overview: "REPLACE ME — add a 2–3 sentence overview of what Bull Clothings does and how it's built.",
+    techGroups: [{ label: "Stack", items: "REPLACE ME" }],
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     name: "IARDO",
     tagline: "REPLACE ME — e.g. Internal Dashboard / Tool", // [Guessing]
     date: "REPLACE ME", // [Guessing]
     image: iardoImg,
-    stack: ["REPLACE ME"], // [Guessing]
+    overview: "REPLACE ME — add a 2–3 sentence overview of what IARDO does and how it's built.",
+    techGroups: [{ label: "Stack", items: "REPLACE ME" }],
+    githubUrl: "#",
+    liveUrl: "#",
   },
 ];
 
-const SKILL_GROUPS = [
-  { group: "Languages & Databases", items: ["Java", "React", "JavaScript", "HTML5", "CSS3", "MySQL"] },
-  { group: "Frameworks", items: ["Spring", "Spring Boot", "JDBC", "REST APIs", "JSP", "Servlets", "Hibernate"] },
-  { group: "Tools & Platforms", items: ["Maven", "Git", "GitHub", "Postman", "VS Code", "Eclipse IDE", "STS"] },
+/* Tech stack — grouped into icon tiles like a real toolkit,
+   not a wall of chips. Each item shows a compact glyph (its
+   own initials/shorthand) plus the full name. */
+const TECH_GROUPS = [
+  {
+    group: "Languages",
+    items: [
+      { short: "J", name: "Java" },
+      { short: "JS", name: "JavaScript" },
+      { short: "SQL", name: "MySQL" },
+      { short: "</>", name: "HTML5" },
+      { short: "#", name: "CSS3" },
+    ],
+  },
+  {
+    group: "Frameworks",
+    items: [
+      { short: "Sp", name: "Spring" },
+      { short: "SB", name: "Spring Boot" },
+      { short: "JDBC", name: "JDBC" },
+      { short: "Hib", name: "Hibernate" },
+      { short: "JSP", name: "JSP" },
+      { short: "Svl", name: "Servlets" },
+    ],
+  },
+  {
+    group: "Tools & Platforms",
+    items: [
+      { short: "Mvn", name: "Maven" },
+      { short: "Git", name: "Git" },
+      { short: "Hub", name: "GitHub" },
+      { short: "Pm", name: "Postman" },
+      { short: "VS", name: "VS Code" },
+      { short: "Ecl", name: "Eclipse IDE" },
+      { short: "STS", name: "STS" },
+    ],
+  },
+  {
+    group: "APIs & Data",
+    items: [
+      { short: "API", name: "REST APIs" },
+      { short: "DB", name: "MySQL" },
+    ],
+  },
 ];
 
 const ORBIT_ITEMS = ["Java", "Spring Boot", "MySQL", "React", "Maven", "REST APIs", "Hibernate", "JavaScript"];
+
+/* LeetCode — only the number confirmed on the resume is shown
+   as a real stat; the rest are placeholders to fill in. */
+const LEETCODE = {
+  solved: "50+",
+  profileUrl: "#", // REPLACE ME — add LeetCode profile URL
+  streak: "REPLACE ME",
+  badges: "REPLACE ME",
+};
+
+/* Social links for the contact section — add real URLs. */
+const SOCIALS = [
+  { label: "GitHub", href: "#" }, // REPLACE ME
+  { label: "LinkedIn", href: "#" }, // REPLACE ME
+  { label: "LeetCode", href: "#" }, // REPLACE ME
+];
 
 /* ---------------------------------------------------------
    Helpers
@@ -229,6 +317,10 @@ function Nav({ active, onNavigate }) {
   );
 }
 
+/* ---------------------------------------------------------
+   Hero — single centered layout, textured gradient background
+   (no image asset required)
+--------------------------------------------------------- */
 function Hero({ onNavigate }) {
   return (
     <section id="hero" className="hero">
@@ -241,7 +333,7 @@ function Hero({ onNavigate }) {
         <div className="hero-content">
           <p className="eyebrow">Full Stack · Java Developer</p>
           <h1 className="hero-title">
-            Sarvjeet <span className="hero-title-accent">Singh</span>
+            Hey! I'm <span className="hero-title-accent">Sarvjeet</span>
           </h1>
           <p className="hero-sub">
             I build scalable backends and the interfaces on top of them — Java, Spring Boot
@@ -263,31 +355,6 @@ function Hero({ onNavigate }) {
             </a>
           </div>
         </div>
-
-        <TiltCard className="hero-card" maxTilt={8}>
-          <div className="hero-card-inner">
-            <div className="hero-card-row">
-              <span className="hero-card-label">role</span>
-              <span className="hero-card-value">Java Developer</span>
-            </div>
-            <div className="hero-card-row">
-              <span className="hero-card-label">based in</span>
-              <span className="hero-card-value">Meerut, India</span>
-            </div>
-            <div className="hero-card-row">
-              <span className="hero-card-label">focus</span>
-              <span className="hero-card-value">Backend &amp; Full Stack</span>
-            </div>
-            <div className="hero-card-divider" />
-            <div className="hero-card-tags">
-              {["Java", "Spring Boot", "MySQL", "React"].map((t) => (
-                <span key={t} className="hero-card-tag">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        </TiltCard>
       </div>
 
       <button
@@ -306,7 +373,7 @@ function About() {
     <section id="about" className="section">
       <div className="section-inner about-grid">
         <Reveal className="about-text">
-          <p className="section-eyebrow">01 — About</p>
+          <p className="section-eyebrow">About</p>
           <h2 className="section-title">Backend-first, product-minded.</h2>
           <p className="section-body">
             I'm a full stack developer who's most at home in Java and Spring Boot,
@@ -336,7 +403,7 @@ function Experience() {
     <section id="experience" className="section section-alt">
       <div className="section-inner">
         <Reveal>
-          <p className="section-eyebrow">02 — Experience</p>
+          <p className="section-eyebrow">Experience</p>
           <h2 className="section-title">Where I've worked.</h2>
         </Reveal>
 
@@ -367,47 +434,63 @@ function Experience() {
   );
 }
 
+/** One spotlight project — image on one side, overview + tech
+    groups + links on the other. Alternates sides per index so
+    the section doesn't feel like a repeated card grid. */
+function ProjectSpotlight({ proj, index }) {
+  const flipped = index % 2 === 1;
+  return (
+    <Reveal className={`project-row ${flipped ? "project-row-flip" : ""}`} delay={index * 90}>
+      <TiltCard className="project-media" maxTilt={5}>
+        <div className="project-media-inner">
+          <img src={proj.image} alt={`${proj.name} preview`} className="project-image" loading="lazy" />
+        </div>
+      </TiltCard>
+
+      <div className="project-copy">
+        <div className="project-copy-top">
+          <div>
+            <h3 className="project-name">{proj.name}</h3>
+            <p className="project-tagline">{proj.tagline}</p>
+          </div>
+          <span className="project-date">{proj.date}</span>
+        </div>
+
+        <p className="project-overview">{proj.overview}</p>
+
+        <div className="project-tech-groups">
+          {proj.techGroups.map((g) => (
+            <p className="project-tech-row" key={g.label}>
+              <span className="project-tech-label">{g.label}:</span> {g.items}
+            </p>
+          ))}
+        </div>
+
+        <div className="project-links">
+          <a className="btn btn-ghost btn-sm" href={proj.githubUrl}>
+            GitHub
+          </a>
+          <a className="btn btn-primary btn-sm" href={proj.liveUrl}>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
 function Projects() {
   return (
     <section id="projects" className="section">
       <div className="section-inner">
         <Reveal>
-          <p className="section-eyebrow">03 — Projects</p>
+          <p className="section-eyebrow">Projects</p>
           <h2 className="section-title">Shipped, not just built.</h2>
         </Reveal>
 
-        <div className="project-grid">
+        <div className="project-list">
           {PROJECTS.map((proj, i) => (
-            <Reveal key={proj.name} delay={i * 140}>
-              <TiltCard className="project-card" maxTilt={7}>
-                <div className="project-card-inner">
-                  <div className="project-image-wrap">
-                    <img
-                      src={proj.image}
-                      alt={`${proj.name} preview`}
-                      className="project-image"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="project-card-body">
-                    <div className="project-card-top">
-                      <div>
-                        <h3 className="project-name">{proj.name}</h3>
-                        <p className="project-tagline">{proj.tagline}</p>
-                      </div>
-                      <span className="project-date">{proj.date}</span>
-                    </div>
-                    <div className="chip-row">
-                      {proj.stack.map((s) => (
-                        <span className="chip" key={s}>
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </TiltCard>
-            </Reveal>
+            <ProjectSpotlight proj={proj} index={i} key={proj.name} />
           ))}
         </div>
       </div>
@@ -456,34 +539,83 @@ function OrbitRing() {
   );
 }
 
-function Skills() {
+/** Tech Stack — icon-tile grid grouped by category, echoing a
+    toolbelt/dock rather than a paragraph of chips. */
+function TechStack() {
   return (
-    <section id="skills" className="section section-alt">
-      <div className="section-inner skills-grid">
-        <Reveal className="skills-text">
-          <p className="section-eyebrow">04 — Skills</p>
+    <section id="techstack" className="section section-alt">
+      <div className="section-inner">
+        <Reveal>
+          <p className="section-eyebrow">Tech Stack</p>
           <h2 className="section-title">The stack I reach for.</h2>
-          <div className="skill-groups">
-            {SKILL_GROUPS.map((g) => (
-              <div className="skill-group" key={g.group}>
-                <h4>{g.group}</h4>
-                <div className="chip-row">
-                  {g.items.map((s) => (
-                    <span className="chip chip-alt" key={s}>
-                      {s}
-                    </span>
-                  ))}
-                </div>
+        </Reveal>
+
+        <div className="tech-groups">
+          {TECH_GROUPS.map((g, gi) => (
+            <Reveal className="tech-group" key={g.group} delay={gi * 100}>
+              <h4 className="tech-group-title">{g.group}</h4>
+              <div className="tech-tile-row">
+                {g.items.map((it) => (
+                  <div className="tech-tile" key={it.name} title={it.name}>
+                    <span className="tech-tile-glyph">{it.short}</span>
+                    <span className="tech-tile-name">{it.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="orbit-wrap" delay={200}>
+          <OrbitRing />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/** LeetCode Profile — mirrors the stat-card + highlights layout,
+    built only from the number confirmed on the resume. Placeholder
+    fields are marked so real stats can be dropped in later. */
+function LeetCodeSection() {
+  return (
+    <section id="leetcode" className="section">
+      <div className="section-inner">
+        <Reveal>
+          <p className="section-eyebrow">LeetCode</p>
+          <h2 className="section-title">Solving problems, building skills.</h2>
+        </Reveal>
+
+        <Reveal className="leet-banner" delay={100}>
+          <div className="leet-banner-text">
+            <h3>Check out my LeetCode journey!</h3>
+            <p>Solving problems, building skills, and maintaining streaks.</p>
           </div>
+          <a className="btn btn-ghost" href={LEETCODE.profileUrl}>
+            View Profile ↗
+          </a>
+        </Reveal>
+
+        <div className="leet-stats">
+          <Reveal className="leet-stat-card" delay={140}>
+            <span className="leet-stat-label">Problems Solved</span>
+            <span className="leet-stat-value">{LEETCODE.solved}</span>
+          </Reveal>
+          <Reveal className="leet-stat-card" delay={200}>
+            <span className="leet-stat-label">Max Streak</span>
+            <span className="leet-stat-value leet-stat-placeholder">{LEETCODE.streak}</span>
+          </Reveal>
+          <Reveal className="leet-stat-card" delay={260}>
+            <span className="leet-stat-label">Badges</span>
+            <span className="leet-stat-value leet-stat-placeholder">{LEETCODE.badges}</span>
+          </Reveal>
+        </div>
+
+        <Reveal delay={300}>
           <p className="leetcode-note">
             <strong>50+ problems</strong> solved on LeetCode — strong foundation in Data
             Structures &amp; Algorithms.
           </p>
-        </Reveal>
-        <Reveal className="skills-orbit" delay={150}>
-          <OrbitRing />
         </Reveal>
       </div>
     </section>
@@ -492,14 +624,14 @@ function Skills() {
 
 function Contact() {
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="section section-alt contact-section">
       <div className="section-inner">
         <Reveal className="contact-inner">
-          <p className="section-eyebrow">05 — Contact</p>
-          <h2 className="section-title">Let's build something.</h2>
+          <p className="section-eyebrow">Contact</p>
+          <h2 className="section-title">Still a stranger?</h2>
           <p className="section-body contact-copy">
-            Open to full stack and backend Java roles. The fastest way to reach me is
-            email or a call.
+            Open to full stack and backend Java roles. Feel free to drop me an email if you
+            think we'd make a great team — let's make the work productive and enjoyable.
           </p>
           <div className="contact-actions">
             <a className="btn btn-primary" href="mailto:ssarvjeet834@gmail.com">
@@ -509,13 +641,12 @@ function Contact() {
               +91 98891 41494
             </a>
           </div>
-          <div className="contact-secondary">
-            <span className="muted-link" title="Add your LinkedIn URL here">
-              LinkedIn ↗
-            </span>
-            <span className="muted-link" title="Add your LeetCode URL here">
-              LeetCode ↗
-            </span>
+          <div className="contact-socials">
+            {SOCIALS.map((s) => (
+              <a key={s.label} className="social-pill" href={s.href} title={`Add your ${s.label} URL`}>
+                {s.label}
+              </a>
+            ))}
           </div>
         </Reveal>
       </div>
@@ -561,7 +692,8 @@ export default function App() {
       <About />
       <Experience />
       <Projects />
-      <Skills />
+      <TechStack />
+      <LeetCodeSection />
       <Contact />
     </div>
   );
